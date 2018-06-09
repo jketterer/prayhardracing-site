@@ -1,0 +1,35 @@
+{% extends 'home/layout.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type='text/css' href="{% static 'home/drivers.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <h1>{{ Title }}</h1>
+    </div>
+
+    <div class="row">
+
+    {# Adds each driver to the page #}
+    {% for driver in Drivers %}
+
+        <div class="col-md-4">
+            <img src="{{ driver.picture.url }}" width="600" height="400">
+            <div class="card bg-light mb-3 mx-auto" style="max-width: 400px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ driver.name }}</h5>
+                    <h6 class="card-text">{{ driver.bio }}</h6>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
