@@ -1,19 +1,26 @@
 from django.shortcuts import render
-from .models import Driver, About
+from .models import Driver
+from posts.models import Post
 
 # Create your views here.
 def index(request):
-    return render(request, 'home/index.html')
 
-def about(request):
+    recent = Post.objects.all()[:3]
 
-    info = About.objects.all()
-
-    context = {
-        'Info': info,
+    posts = {
+        'post1': recent[0],
+        'post2': recent[1],
+        'post3': recent[2],
     }
 
-    return render(request, 'home/about.html', context)
+    context = {
+        'posts': posts,
+    }
+
+    return render(request, 'home/index.html', context)
+
+def about(request):
+    return render(request, 'home/about.html')
 
 def bigCars(request):
 

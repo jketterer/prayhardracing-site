@@ -29,7 +29,6 @@
                             </div>
                         </div>
 
-                        <!--	THESE DON'T WORK AND I HAVE NO CLUE WHY	-->
                         <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -56,13 +55,16 @@
             <h2 id="news">Recent Posts</h2>
             <hr width="95%" color="#AAAAAA">
             <div class="col-md-4">
-                <p>This is column 1!</p>
+                <h6>{{ posts.post1.title }}</h6>
+                <p>{{ posts.post1.content }}</p>
             </div>
             <div class="col-md-4">
-                <p>This is column 2!</p>
+                <h6>{{ posts.post2.title }}</h6>
+                <p>{{ posts.post2.content }}</p>
             </div>
             <div class="col-md-4">
-                <p>This is column 3!</p>
+                <h6>{{ posts.post3.title }}</h6>
+                <p>{{ posts.post3.content }}</p>
             </div>
         </div>
     </div>

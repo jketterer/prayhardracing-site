@@ -8,7 +8,3 @@ class Driver(models.Model):
     junior = models.BooleanField()
     def __str__(self):
         return self.name
-
-class About(models.Model):
-    info = models.TextField(max_length=1000)
-    picture = models.ImageField(upload_to="about_images/")
